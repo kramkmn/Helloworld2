@@ -1,0 +1,333 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+         <style>
+            body{
+                background: linear-gradient(#ffffff, #ffffff);
+            }
+            a{
+                text-decoration: none;
+                color: #000000;
+            }
+            a:hover{
+                text-decoration: none;
+                color: #aaaaaa;
+            }
+
+            #boxmain{
+                position: absolute;
+                margin: auto auto;
+                background-image: url("img/i3.jpg");
+                background-repeat: no-repeat;
+                background-size: 75% 94%;
+                background-position: center top;
+                background-attachment: fixed;
+                width: 75%;
+                height: 100%;
+                box-shadow: 0px 0px 10px #aaaaaa;
+                border-top-left-radius: 50px;
+                border-bottom-right-radius: 50px;
+                overflow: hidden;
+                transition-delay: 3s;
+                transition: 2s, 2s;
+                animation-duration: 4s;
+                border-bottom: solid 1000px;
+            }
+
+            #boxmain:hover{
+                position: absolute;
+                margin: auto auto;
+                background-image: url("img/i1.jpg");
+                background-repeat: no-repeat;
+                background-size: 75% 94%;
+                background-position: center top;
+                background-attachment: fixed;
+                width: 75%;
+                height: 100%;
+                box-shadow: 0px 0px 10px #aaaaaa;
+                border-top-left-radius: 50px;
+                border-bottom-right-radius: 50px;
+                overflow: hidden;
+
+            }
+            #boxbody{
+                margin: auto auto;
+                width: 75%;
+                height: 100%;
+            }
+
+            #hdiv{
+                position: relative;
+                width: 100%;
+                height: 20%;
+                background: #ffffff;
+            }
+            #hdiv>div{
+                position: absolute; 
+                left: 0px; right: 0px; top: 0px; bottom: 0px;
+                background: #ffffff;
+            }
+
+            #head_menu{
+                position: relative; 
+                width: 100%;
+                height: 5%;
+                background: #000000;
+                
+            }
+
+            #menubar{
+                position: relative; 
+                width: 100%;
+                height: 6%;
+                background: #ffffff;
+            }
+
+            #main{
+                position: relative; 
+                width: 100%;
+
+            }
+
+            #topmain_head > td > a> div{
+                margin: 0px 0px;
+            }
+
+            #topmain_head > td > a> div{ 
+                background: #000000;
+                height: 6%;
+                padding: 5px;
+            }
+
+            }
+
+            #topmain > td > a> div >font{
+                margin: auto auto;
+            }
+
+            #topmain > td > a> div{ 
+                background: #ffffff;
+                height: 6%;
+                padding: 6px;
+            }
+            #topmain > td > a> div:hover{
+                opacity: 0.7;
+            }
+
+            #pic1 > img{
+                width: 55%; height: 28%;
+            }
+            #pic1 > img:hover{
+                opacity: 0.6;
+                transition: 2s, 2s;
+            }
+
+/* make picture slide */
+
+/* make dropdown*/
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #ffffff;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a, .dropbtn {
+                display: inline-block;
+                color: #000000;
+                text-align: center;
+                padding: 10px 20px;
+                text-decoration: none;
+            }
+
+            li a:hover, .dropdown:hover .dropbtn {
+                background-color: #ffffff;
+            }
+
+            li.dropdown {
+                display: inline-block;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+            .dropdown-content a:hover {background-color: #f1f1f1}
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+
+/* make snow*/
+            #boxsnow{
+                position: absolute;
+            }
+
+            #boxsnow > div{
+                position: absolute;
+                background: #ffffff;
+                width: 10px;
+                height: 10px;
+                border-radius: 5px;
+            }
+        </style>
+        <script>
+            var c = 10;
+            var x = new Array(10);
+            var y = new Array(10);
+            var i;
+
+            for(i=0;i<c;i++){
+                x[i] = (Math.random()*c)*(120);
+                y[i] = (Math.random()*c)*(-100);
+            }
+
+            function snow(){
+                var sn = "";
+
+                for(i=0;i<c;i++){
+                    y[i] += 1;
+                    if(y[i] > 800){
+                        x[i] = (Math.random()*c)*(120);
+                        y[i] = (Math.random()*c)*(-110);
+                    }
+                    sn += "<div style='margin: " + y[i] + "px " + x[i] + "px;'></div>";
+                }
+
+                document.getElementById("boxsnow").innerHTML = sn;
+            }
+        </script>
+    </head>
+  <body>
+    <div id="boxbody">
+        <div id="boxmain">
+            <div id="hdiv">
+                <div id="head_menu">
+                   <table width=100% height=100% border=0px  align=center cellpadding=0px cellspacing=0px>
+                    <tr align=center id="topmain_head">
+                        <td width=5% bgcolor=#000000>
+
+                        </td>
+                        <td width=5%>
+                            <a href="http://www.obeg.go.th/" target="blank"><div id="pic1"><img src="png/facebook.png"></div></a>
+                        </td>
+                        <td width=5%>
+                            <a href="http://www.obeg.go.th/" target="blank"><div id="pic1"><img src="png/ig.png"></div></a>
+                        </td>   
+                        <td width=5%>
+                            <a href="http://www.obeg.go.th/" target="blank"><div id="pic1"><img src="png/youtube.png"></div></a>
+                        </td>
+                        <td width=5%>
+                            <a href="http://www.obeg.go.th/" target="blank"><div id="pic1"><img src="png/mail.png"></div></a>
+                        </td>
+                        <td width=5%>
+                            <a href="http://www.obeg.go.th/" target="blank"><div id="pic1"><img src="png/google.png"></div></a>
+                        </td>
+                        <td width=55% bgcolor=#000000>
+
+                        </td>
+                        <td width=5%>
+                            <a href="http://www.obeg.go.th/" target="blank">
+                                <div id="pic1"><img src="png/home.png"></div>
+
+                            </a>
+                        </td>
+                        <td wight=5%>
+                            <a href="http://www.obeg.go.th/" target="blank"><div id="pic1"><img src="png/dev.png"></div></a>
+                        </td>   
+                        <td width=5%>
+                            <a href="http://www.obeg.go.th/" target="blank"><div id="pic1"><img src="png/facebook.png"></div></a>
+                        </td>
+                    </tr>
+                   </table>
+                    <div align="center"><br>
+                        <img src="png/logo.png" width=25% height=1450%>
+                    </div>
+                </div>
+            </div>
+
+            <div id="menubar">
+                <table width=100% height=100% border=0px  align=center cellpadding=3px cellspacing=0px>
+                    <tr align=center id="topmain">
+                        <td width=15%></td>
+                        <td >
+                            <ul>
+                                <li><a class="active" href="#home">Home</a></li>
+                                <li><a href="#news">News</a></li>
+                                <li class="dropdown">
+                                    <a href="active" class="dropbtn">เที่ยวภาคเหนือ</a>
+                                    <div class="dropdown-content">
+                                        <a href="http://www.obeg.go.th/" target="blank">Home</a>
+                                        <a href="http://www.obeg.go.th/" target="blank">ภาคเหนือ</a>
+                                        <a href="http://www.obeg.go.th/" target="blank">ภาคกลาง</a>
+                                        <a href="http://www.obeg.go.th/" target="blank">ภาคตะวันออกเฉียงเหนือ</a>
+                                        <a href="http://www.obeg.go.th/" target="blank">ภาคใต้</a>
+                                    </div>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="active" class="dropbtn">เที่ยวภาคกลาง</a>
+                                    <div class="dropdown-content">
+                                        <a href="http://www.obeg.go.th/" target="blank">Home</a>
+                                        <a href="http://www.obeg.go.th/" target="blank">ภาคเหนือ</a>
+                                        <a href="http://www.obeg.go.th/" target="blank">ภาคกลาง</a>
+                                        <a href="http://www.obeg.go.th/" target="blank">ภาคตะวันออกเฉียงเหนือ</a>
+                                        <a href="http://www.obeg.go.th/" target="blank">ภาคใต้</a>
+                                    </div>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="active" class="dropbtn">เที่ยวภาคตะวันออกเฉียงเหนือ</a>
+                                    <div class="dropdown-content">
+                                        <a href="http://www.obeg.go.th/" target="blank">Home</a>
+                                        <a href="http://www.obeg.go.th/" target="blank">ภาคเหนือ</a>
+                                        <a href="http://www.obeg.go.th/" target="blank">ภาคกลาง</a>
+                                        <a href="http://www.obeg.go.th/" target="blank">ภาคตะวันออกเฉียงเหนือ</a>
+                                        <a href="http://www.obeg.go.th/" target="blank">ภาคใต้</a>
+                                    </div>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="active" class="dropbtn">เที่ยวภาคใต้</a>
+                                    <div class="dropdown-content">
+                                        <a href="http://www.obeg.go.th/" target="blank">Home</a>
+                                        <a href="http://www.obeg.go.th/" target="blank">ภาคเหนือ</a>
+                                        <a href="http://www.obeg.go.th/" target="blank">ภาคกลาง</a>
+                                        <a href="http://www.obeg.go.th/" target="blank">ภาคตะวันออกเฉียงเหนือ</a>
+                                        <a href="http://www.obeg.go.th/" target="blank">ภาคใต้</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="main">
+                <marquee behavior="alternate" scrollamount=10 onMouseOver="this.stop()" onMouseOut="this.start()">
+
+                </marquee>
+            </div>
+                <div id="boxsnow">
+                    <script>
+                        setInterval("snow();",5);
+                    </script>
+                </div>
+        </div>
+  </body>
+</html>
